@@ -8,7 +8,7 @@ services:
         MYSQL_PASSWORD: test
         MYSQL_ROOT_PASSWORD: test
     ports:
-        - "4306:3306"
+        - "306:3306"
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
       - ./src/mysql:/var/lib/mysql
