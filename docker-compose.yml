@@ -41,3 +41,15 @@ services:
     ports:
       - 80:80    
       
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=${MYSQL_USER}
+      - PMA_PASSWORD=${MYSQL_DATABASE}
+    ports:
+      - "3000:80"
+    volumes:
+      - ./src/phpmyadmin/sessions:/sessions
